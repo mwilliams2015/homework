@@ -1,0 +1,23 @@
+<table style="width:500px; height:200px; border:1px solid black;
+border-collapse:collapse">
+
+<% all_books = Book.read %>
+
+<th align="left" style="border:1px solid black;
+border-bottom:2px solid black; border-collapse:collapse; padding:15px"><b>Title</b></th>
+<th align="left" style="border:1px solid black;
+border-bottom:2px solid black; border-collapse:collapse; padding:15px"><b>Author</b></th>
+
+<% all_books.each do |book| %>
+<tr style="border:1px solid black;
+border-collapse:collapse; padding:15px">
+
+<td style="border:1px solid black;
+border-collapse:collapse; padding:15px"> <%= book["title"] %> </td>
+<td style="border:1px solid black;
+border-collapse:collapse; padding:15px"> <%= book["author"] %> </td>
+</tr>
+
+<% end %>
+
+
