@@ -1,16 +1,27 @@
+<h1> Store Inventory </h1>
+
 <table style="width:500px; height:200px; border:1px solid black;
 border-collapse:collapse">
 
 <% all_books = Book.read %>
 
+<tr>
+    <th> Title </th>
+    <th> Average Rating </th>
+  </tr>
+
 <% all_books.each do |book| %>
 <tr style="border:1px solid black;
 border-collapse:collapse; padding:15px">
 
+<% name = book["title"] %>
+
 <td style="border:1px solid black;
-border-collapse:collapse; padding:15px"> <%= book["title"] %> </td>
+border-collapse:collapse; padding:15px"> <%= link_to name, "/books/#{book["id"]}" %> </td>
+
 <td style="border:1px solid black;
-border-collapse:collapse; padding:15px"> <%= book["author"] %> </td>
+border-collapse:collapse; padding:15px"> <%= Reviews.where("title" => name).average("rating") %> </td>
+
 </tr>
 
 <% end %>
