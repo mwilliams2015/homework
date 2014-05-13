@@ -6,4 +6,6 @@ get "/books" => "books/list"
 
 get "/books/:id" => "books/show"
 
+get "" => "books/home"
+
 end

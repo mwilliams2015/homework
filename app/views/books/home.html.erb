@@ -1,0 +1,9 @@
+
+<% editors_pick = Reviews.group("title").order("avg(rating) desc").first["title"] %>
+
+<h1> The editor's pick is: <%= link_to editors_pick, "/books/#{Book.find_by("title" => editors_pick)[:id]}" %> </h1>
+
+
+
+
+
