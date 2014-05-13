@@ -1,1 +1,18 @@
+<h1> Your Book Selection: </h1>
+
+
+<% book_id = params["id"] %>
+<% book = Book.read(book_id) %>
+<% avgrating = Reviews.where("title" => book["title"]).average("rating") %>
+
+<h2><%= book["title"] %> </h2>
+
+<p> Author: <%= book["author"] %> </p>
+
+<p> Price: $<%= book["price"] %>.00 </p>
+
+<p> Average rating: <%= avgrating %> </p>
+
+
+
 
