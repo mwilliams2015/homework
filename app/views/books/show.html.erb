@@ -15,4 +15,30 @@
 
 
 
+<table style="width:500px; height:200px; border:1px solid black;
+border-collapse:collapse">
+
+<% all_reviews = Reviews.where("title" => book["title"]) %>
+
+<tr>
+    <th> Rating </th>
+    <th> Feedback </th>
+  </tr>
+
+<% all_reviews.each do |review| %>
+<tr style="border:1px solid black;
+border-collapse:collapse; padding:15px">
+
+<td style="border:1px solid black;
+border-collapse:collapse; padding:15px"> <%= review["rating"] %> </td>
+
+<td style="border:1px solid black;
+border-collapse:collapse; padding:15px"> <%= review["feedback"] %> </td>
+
+</tr>
+
+<% end %>
+
+
+
 
