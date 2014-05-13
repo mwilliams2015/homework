@@ -1,3 +1,11 @@
 Book:
   - title: string
   - author: string
+  - price: integer
+
+Reviews:
+  - title: string
+  - rating: integer
+  - feedback: string
+
+
